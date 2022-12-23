@@ -22,6 +22,6 @@ including the [MaPU](/projects/1_mapu) architecture with Ultra VLIW (14 slots) a
 
 Recently, I'm interested in open source processor architecture (RISC-V), and hardware/software stack of Domain Specific Accelerator (DSP, Deep Learning, Data Center, IoT).
 
-And Now I'm leading the system software team of Yitian710, the most powerful commercialized ARM server chip with 128 ARM v9 Cores.
+And Now I'm leading the system software team of [Yitian710](/projects/4_YiTian710), the most powerful commercialized ARM server chip with 128 ARM v9 Cores.
 
 

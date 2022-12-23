@@ -33,7 +33,7 @@ I was one of the YiTian710 project initial group.
 </div>
 My mission is to ensure:
 * Succeed in one tapeout                  ==> <strong> We did it! Mass Production in One shot </strong>.
-* Commercial landing within shortest time ==> <strong> Mass Production in 6 months after bringup  </strong>.
+* Commercial landing within shortest time ==> <strong> Mass Production in 12 months after bringup  </strong>.
 
 #### I endeavored in following aspect to achieve this goal:
 1. <strong> Team Building: </strong> Build the entire system software team and stack from 0.
@@ -42,7 +42,7 @@ My mission is to ensure:
     * Production feature development (DDR5/PCIe/Out-of-Band Management/RAS/Power & Thermal).
     * Chip bringup in 72 hours.
     * Enabling full machine in 1 month.
-    * Mass production in 6 months (Bugfix, chip workarounds).
+    * Mass production in 12 months (EVT/PVT/DVT,Bugfix, chip workarounds).
 
 #### Reference software stack:
 <div>
