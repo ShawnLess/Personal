@@ -73,7 +73,8 @@ Please cite following paper if you find our research helpful:
  publisher={IEEE}
  }
 ```
-
+{% bibliography -f papers -q @*[title=A 1.4 GHz 695 Giga Risc-V Inst/s 496-Core Manycore Processor With Mesh On-Chip Network and an All-Digital Synthesized PLL in 16nm CMOS]* %}
+{% bibliography -f papers -q @*[title=Evaluating Celerity: A 16-nm 695 Giga-RISC-V Instructions/s Manycore Processor With Synthesizable PLL]* %}
 {% bibliography -f papers -q @*[title=The Celerity open-source 511-core RISC-V tiered accelerator fabric: Fast architectures and design methodologies for fast chips]* %}
 {% bibliography -f papers -q @*[title=Celerity: An open source RISC-V tiered accelerator fabric]* %}
 {% bibliography -f papers -q @*[title=The BaseJump Manycore Accelerator Network]* %}
