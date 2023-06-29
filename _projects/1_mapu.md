@@ -35,7 +35,7 @@ Complete source code can be found at [https://github.com/mapu/toolchains.git](ht
 ## Prototype Chip
 
 <div class="img_row">
-    <img class="one three left" src="{{ site.baseurl }}/assets/img/MaPU_layout.svg" alt="" title="MaPU Layout"/>
+    <img class="one three left" src="{{ site.baseurl }}/assets/img/MaPU_layout.jpg" alt="" title="MaPU Layout"/>
     <img class="two three left" src="{{ site.baseurl }}/assets/img/MaPU_Chip.jpeg" alt="" title="MaPU Chip"/>
 </div>
 <div class="col three caption">
