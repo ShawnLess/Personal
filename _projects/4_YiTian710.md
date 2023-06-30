@@ -32,18 +32,23 @@ I was one of the YiTian710 project initial group.
     <img class="three" src="{{ site.baseurl }}/assets/img/Initial_Team.png" alt="" title="Initial Team"/>
 </div>
 My mission is to ensure:
-* High level SoC arhictecture/feature to ensure final product meets the requirement  ==> <strong> We did it! Commercialized in one short. </strong> 
-* Succeed in one tapeout                  ==> <strong> We did it! Mass Production in One shot </strong>.
-* Commercial landing within shortest time ==> <strong> We did it! Mass Production in 12 months after bringup  </strong>.
+1. <strong> High level SoC arhictecture/feature; Ensure final product meets the requirement </strong>
+  *  We did it! Commercialized <strong> in one shot. </strong> 
+2. <strong> Succeed in one tapeout, No blocking bugs or archiecture defects. </strong>
+  *  We did it! Mass Production <strong> in one shot </strong>.
+3. <strong> Commercial landing within shortest time  </strong>
+  *  We did it! Mass Production <strong> in 12 months </strong> after bringup.
 
 #### I endeavored in following aspect to achieve this goal:
-1. <strong> System Software Team Building: </strong> Build the entire system software team and stack from 0
-2. <strong> Pre-Silicon Architecture Ratification & Validation: </strong> Conduct end to end system level validation to ensure SoC meets the spec.  
-3. <strong> Post-Silicon: </strong>
-    * Production feature development (DDR5/PCIe/Out-of-Band Management/RAS/Power & Thermal).
-    * Chip bringup in 72 hours.
-    * Enabling full machine in 1 month.
-    * Mass production in 12 months (EVT/PVT/DVT,Bugfix, chip workarounds).
+1. <strong> Team Building: </strong> 
+    1. Build the entire system software team and software stack from 0
+2. <strong> Pre-Silicon: Architecture Ratification & Validation </strong> 
+    1. Conduct end to end system level validation to ensure SoC meets the spec.  
+3. <strong> Post-Silicon: Chip Enabling and Commercializing</strong>
+    1. Production feature development (DDR5/PCIe/Out-of-Band Management/RAS/Power & Thermal).
+    2. Chip bringup in 72 hours.
+    3. Enabling full machine in 1 month.
+    4. Mass production in 12 months (EVT/PVT/DVT,Bugfix, chip workarounds).
 
 #### Reference software stack:
 <div>
