@@ -1,5 +1,6 @@
 ---
 layout: about
+title: about
 permalink: /
 title: <strong>Shaolin </strong> Xie
 description: God help those who help themselves.
@@ -11,8 +12,9 @@ profile:
     <p>HaiDian District</p>
     <p>Beijing, China</p>
 
-news: true
-social: true
+news: true # includes a list of news items
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
 ---
 
 Centers around the efficiency and scalability of next-generation microprocessors for the emerging planet-scale applications. With domain specific architecture and kilo-scale networks, *I believe the future heterogeneous manycore microprocessor would provide unprecedented computation power and efficiency, empowering us to better acquire, process and understand the information of the world.* 
