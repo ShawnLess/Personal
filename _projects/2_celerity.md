@@ -3,6 +3,9 @@ layout: page
 title: Celerity
 description: Open-Source RISC-V Tiered Accelerator Fabric SoC.</br> I was one of the most contributors on Celerity projects when I worked in Michael Taylor's group at University of California, San Diego, from 2016 -- 2017. I was in charge of the manycore array, SoC assembling and software stack. 
 img: /assets/img/Celerity_logo.svg
+importance: 1
+category: work
+related_publications: false
 ---
 
 [Celerity](http://opencelerity.org) is an accelerator-centric system-on-chip (SoC) which uses a tiered accelerator

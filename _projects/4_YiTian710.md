@@ -3,6 +3,9 @@ layout: page
 title: YiTian710
 description: YiTian710.</br> Alibaba’s Yitian 710 Is China’s First Homegrown Cloud-Native CPU to Be Put Into Large-Scale Use, 
 img: /assets/img/YiTian710.png
+importance: 1
+category: work
+related_publications: false
 ---
 
 YiTian710 is fabricated in cutting edge 5nm technology. Though YiTian710 only for internal use now and no public benchmarks results available, it still stands for the most powerful ARM Server nowadays with **510 SPEC@2017** Int Rate scores.

@@ -3,6 +3,9 @@ layout: page
 title: SDH
 description: Software Defined Hardware.</br> I was fortunate to participate the SDH program when I was a research scientist in Michael Taylor's group at University of Washington (2017 -- 2019), leading the hardware and low-level runtime group.
 img: /assets/img/SDH_logo.png
+importance: 1
+category: work
+related_publications: false
 ---
 
 Software Define Hardware (SDH) is one of the **DARPA** [Electronics Resurgence Initiative program](https://www.darpa.mil/work-with-us/electronics-resurgence-initiative), which aims to build runtime-reconfigurable hardware and software that enables near ASIC performance without sacrificing programmability for data-intensive algorithms.
