@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 title: <strong>Shaolin </strong> Xie
 description: God help those who help themselves.

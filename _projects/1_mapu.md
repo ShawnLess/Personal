@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MaPU
-description: A Mathematical Computing Architecture. </br> MaPU was based on my PhD dissertation which assembles the data path based on program flow. From 2009 - 2016 when I worked as a research scientist at Chinese Academy of Science, I lead the team (initially only PhD students) to implement the architecture spanning from programming model, software and hardware.
+description: A Mathematical Computing Architecture with VLIW and CGRA features.
 img: /assets/img/MaPU_logo.svg
 importance: 1
 category: work

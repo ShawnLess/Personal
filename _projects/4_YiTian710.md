@@ -1,7 +1,7 @@
 ---
 layout: page
 title: YiTian710
-description: YiTian710.</br> Alibaba’s Yitian 710 Is China’s First Homegrown Cloud-Native CPU to Be Put Into Large-Scale Use, 
+description: Alibaba’s Yitian 710 Is China’s First Homegrown Cloud-Native CPU to Be Put Into Large-Scale Use, 
 img: /assets/img/YiTian710.png
 importance: 1
 category: work
