@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: Fundametal Math for Machine Learning
-description: Basic math knowledge and conceptions for machine learning.
+title: Fundamental Math for Machine Learning
+description: A learning notes of the basic math knowledge and conceptions for machine learning.
 tags: Math ML
 giscus_comments: true
 date: 2025-1-27
@@ -63,20 +63,72 @@ toc:
 
 ## Linear Regression
 
-This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine.
-You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`.
-If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
+Linear Regression is an algorithm which predicts unknown value with existing data set. It models the factors and results as linear function, for example:
 
-In fact, you can also use a single dollar sign `$` to create inline formulas, such as `$ E = mc^2 $`, which will render as $ E = mc^2 $. This approach provides the same effect during TeX-based compilation, but visually it appears slightly less bold compared to double-dollar signs `$$`, making it blend more naturally with surrounding text.
+$$  h_\theta (x)=\theta_0 + \theta_1x1 + \theta_2x2 $$
 
-To use display mode, again surround your expression with `$$` and place it as a separate paragraph.
-Here is an example:
+where $x_1,x_2$ are the **factors** which affect the result $h_\theta (x)$. $x_1,x_2$ are also called **features** in deep learning. 
+$\theta_0, \theta_1,\theta_2$ are the parameters or **weights** in deep learning, which are supposed to be fixed during the prediction or **inference**. 
+
+If we let $x_0$=1, then we can write the above equation in a more general form as
+
+$$  h_\theta (x) =\sum_{i=1}^{n}\theta_ix_i=\mathbf{\theta}^T\mathbf{x}  $$
+
+where
 
 $$
-\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+  \mathbf{\theta} = \begin{bmatrix} \theta_0
+                                \\  \theta_1
+                                \\  ...
+                                \\  \theta_n
+                                \\
+                     \end{bmatrix}
+ ,   \mathbf{x} = \begin{bmatrix}   x_0
+                                \\  x_1
+                                \\  ...
+                                \\  x_n
+                                \\
+                     \end{bmatrix}
 $$
 
-Note that MathJax 3 is [a major re-write of MathJax](https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html) that brought a significant improvement to the loading and rendering speed, which is now [on par with KaTeX](http://www.intmath.com/cg5/katex-mathjax-comparison.php).
+Given an concrete example: we suppose the house price is highly related to 1. area, and 2. number of bedroom, how can we predict the price given its area and number of bedrooms?
+
+| Living area ($ft^2$)  |  #bedrooms  | price (k) |
+| ------------------  |  ---------- | --------  |
+| 2104                |  3          | 400       |
+| 1600                |  3          | 330       |
+| 2400                |  3          | 369       |
+| 1416                |  2          | 232       |
+| 3000                |  4          | 540       |
+| ...                 |  ...        | ...       |
+
+In this example:
+$x_1$ is the living area, $x_2$ is the number of bedrooms, **y** is the price of the house.
+
+The table about is called a **training set**, which will be used to training our model (that is the value of $\theta$s).
+
+The straight thought is to choose the hypnosis **h(x)** close to the training data **y**.
+
+This can be expressed with **cost function**. There can be many types of cost functions, the most popular one is least-squares cost function:
+
+$$ J(\theta) = \frac{1}{2}\sum_{i=1}^{n} (h_\theta(x^i) - y^i)^2 $$
+
+### Gradient Descent Algorithm
+
+Gradient Descent Algorithm is used to find the value of $\theta$ so that the $J(\theta)$ is minimized, which can be described as following:
+
+$$ \theta_j := \theta_j - \alpha \frac{\delta J(\theta ) }{\delta \theta_j} $$
+
+Here $\delta$ is called **learning rate**.
+
+Expend the $J(\theta)$ we can get the update equation:
+
+$$ \theta_j := \theta_j + \alpha \sum_{i=1}^{m} (y^i - h_\theta(x^i))x_j^i $$  
+
+where **i** is the index of data sets, **j** is the index of **features** 
+
+#### batch gradient descent
+In the above method, we look at every example in the entire training set on every step, and is called **batch gradient descent**
 
 ---
 
