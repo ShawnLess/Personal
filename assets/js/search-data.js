@@ -37,11 +37,11 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-fundametal-math-for-machine-learning",
+        },{id: "post-fundamental-math-for-machine-learning",
       
-        title: "Fundametal Math for Machine Learning",
+        title: "Fundamental Math for Machine Learning",
       
-      description: "Basic math knowledge and conceptions for machine learning.",
+      description: "A learning notes of the basic math knowledge and conceptions for machine learning.",
       section: "Posts",
       handler: () => {
         
