@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-fundamental-math-for-machine-learning",
+        },{id: "post-discriminative-learning-vs-generative-learning",
+      
+        title: "Discriminative learning vs Generative learning",
+      
+      description: "A concrete comparison of the discriminative and generative learning.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/2025/02/21/Discriminative-Generative.html";
+        
+      },
+    },{id: "post-fundamental-math-for-machine-learning",
       
         title: "Fundamental Math for Machine Learning",
       
