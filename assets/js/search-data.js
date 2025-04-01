@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-discriminative-learning-vs-generative-learning",
+        },{id: "post-addressing-of-gpgpu",
+      
+        title: "Addressing of GPGPU",
+      
+      description: "Addressing scheme of GPU.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/2025/03/24/Addressing-of-GPU-Scaling-Out-Up.html";
+        
+      },
+    },{id: "post-discriminative-learning-vs-generative-learning",
       
         title: "Discriminative learning vs Generative learning",
       
