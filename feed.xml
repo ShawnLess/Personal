@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://shawnless.github.io/Personal//feed.xml" rel="self" type="application/atom+xml"/><link href="https://shawnless.github.io/Personal//" rel="alternate" type="text/html"/><updated>2025-04-11T10:18:26+00:00</updated><id>https://shawnless.github.io/Personal//feed.xml</id><title type="html">Shaolin Xie</title><subtitle>God help those who help themselves. </subtitle><entry><title type="html">Addressing of GPGPU</title><link href="https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up.html" rel="alternate" type="text/html" title="Addressing of GPGPU"/><published>2025-03-24T00:00:00+00:00</published><updated>2025-03-24T00:00:00+00:00</updated><id>https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up</id><content type="html" xml:base="https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up.html"><![CDATA[<h1 id="unified-memory-addressing-uma">Unified Memory Addressing (UMA)</h1> <p>In contemporary computational architecture, the significance of the GPU software ecosystem far outweighs the emphasis placed on hardware performance. Despite the predominant focus of research efforts on enhancing GPU performance metrics, the aspect of programmability remains critically overlooked. Programmability is fundamental to the establishment and evolution of a robust software ecosystem. Specifically, addressing mechanisms in GPUs serve as a pivotal interface for programming practices and memory management strategies. The progression towards greater programming ease has seen the transition from physical addressing to virtual addressing, culminating in the current paradigm of unified memory addressing. This study endeavors to explore both the hardware and software facets inherent to unified addressing, aiming to furnish a deeper understanding of its implications and applications within the realm of GPU architectures.</p> <p>Following code snippet shows how unified memory address simplifies the program:</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://shawnless.github.io/Personal//feed.xml" rel="self" type="application/atom+xml"/><link href="https://shawnless.github.io/Personal//" rel="alternate" type="text/html"/><updated>2025-06-11T09:31:21+00:00</updated><id>https://shawnless.github.io/Personal//feed.xml</id><title type="html">Shaolin Xie</title><subtitle>God help those who help themselves. </subtitle><entry><title type="html">Modern C++ features</title><link href="https://shawnless.github.io/Personal//2025/06/11/Modern-C++-Features.html" rel="alternate" type="text/html" title="Modern C++ features"/><published>2025-06-11T00:00:00+00:00</published><updated>2025-06-11T00:00:00+00:00</updated><id>https://shawnless.github.io/Personal//2025/06/11/Modern-C++-Features</id><content type="html" xml:base="https://shawnless.github.io/Personal//2025/06/11/Modern-C++-Features.html"><![CDATA[<h1 id="coroutine">Coroutine</h1> <p>Coroutine can be seem as “functions whose execution you can pause” and later “resumed”. C++ coroutines are stackless: they suspend execution by returning to the caller, and the data that is required to resume execution is stored separately from the stack.</p> <p><img src="/assets/img/Co-routine.png" alt="Co-Routine" width="70%"/></p> <p>C++ 20 supported with following concepts:</p> <ul> <li><strong>co_await</strong>: to suspend execution until resumed, the arguments for co_await should be <strong>awaitable</strong> instance, which will be explained later.</li> </ul> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="n">task</span><span class="o">&lt;&gt;</span> <span class="n">tcp_echo_server</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">n</span> <span class="o">=</span> <span class="k">co_await</span>  <span class="n">socket</span><span class="p">.</span><span class="n">async_read_some</span><span class="p">(</span><span class="n">buffer</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>  <span class="c1">//suspend the execution and return to the caller</span>
+                        <span class="k">co_await</span>  <span class="n">async_write</span><span class="p">(</span><span class="n">socket</span><span class="p">,</span> <span class="n">buffer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="p">));</span>  <span class="c1">//suspend the execution and return to the caller</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure> <ul> <li><strong>co_yeild</strong>: to suspend execution while returning a value:</li> </ul> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="n">generator</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">iota</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span>
+        <span class="k">co_yield</span> <span class="n">n</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure> <ul> <li><strong>co_yeild</strong>: complete execution and returning a value</li> </ul> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="n">lazy</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">f</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">co_return</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure> <h2 id="promise-in-coroutine">promise in coroutine</h2> <p>Any function is a coroutine if it contains any of ‘co_wait’, ‘co_yield’ or ‘co_return’. For coroutine contains ‘co_wait’, the return type should alias the special <strong>promise_type</strong> (via <strong>using</strong> or typedef like in general) to the specific class or struct defined by the user. The aliased specific class is generally called <strong>promise</strong>, which must implement some of the specific functions used by the caller to control execution of the coroutine . Coroutine submits its result or exception through this promise object.</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">coroutine_return_obj</span>
+
+<span class="k">struct</span> <span class="nc">my_promise</span>
+<span class="p">{</span>
+    <span class="c1">//should return object that the coroutine returns</span>
+    <span class="n">coroutine_return_obj</span> <span class="n">get_return_object</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">coroutine_return_obj</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">coroutine_handle</span><span class="o">&lt;</span><span class="n">my_promise</span><span class="o">&gt;::</span><span class="n">from_promise</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">};</span>
+    <span class="p">};</span>
+
+    <span class="c1">//Called before the co_wait() call.</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">suspend_never</span> <span class="n">initial_suspend</span><span class="p">()</span>  <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="p">{};</span> <span class="p">}</span>
+
+    <span class="c1">//Called just before the coroutine ends.</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">suspend_never</span> <span class="n">final_suspend</span><span class="p">()</span>    <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="p">{};</span> <span class="p">}</span>
+
+    <span class="c1">//Called when no co_returned is called at the end.</span>
+    <span class="kt">void</span> <span class="n">return_void</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{}</span>
+
+     <span class="c1">//Called when some exception happens in coroutine.</span>
+    <span class="kt">void</span> <span class="n">unhandled_exception</span><span class="p">()</span> <span class="k">noexcept</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">"Unhandled exception caught...</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></figure>]]></content><author><name></name></author><category term="C++"/><category term="Boost"/><category term="coroutine"/><summary type="html"><![CDATA[Brief notes of modern C++ features]]></summary></entry><entry><title type="html">Addressing of GPGPU</title><link href="https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up.html" rel="alternate" type="text/html" title="Addressing of GPGPU"/><published>2025-03-24T00:00:00+00:00</published><updated>2025-03-24T00:00:00+00:00</updated><id>https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up</id><content type="html" xml:base="https://shawnless.github.io/Personal//2025/03/24/Addressing-of-GPU-Scaling-Out-Up.html"><![CDATA[<h1 id="unified-memory-addressing-uma">Unified Memory Addressing (UMA)</h1> <p>In contemporary computational architecture, the significance of the GPU software ecosystem far outweighs the emphasis placed on hardware performance. Despite the predominant focus of research efforts on enhancing GPU performance metrics, the aspect of programmability remains critically overlooked. Programmability is fundamental to the establishment and evolution of a robust software ecosystem. Specifically, addressing mechanisms in GPUs serve as a pivotal interface for programming practices and memory management strategies. The progression towards greater programming ease has seen the transition from physical addressing to virtual addressing, culminating in the current paradigm of unified memory addressing. This study endeavors to explore both the hardware and software facets inherent to unified addressing, aiming to furnish a deeper understanding of its implications and applications within the realm of GPU architectures.</p> <p>Following code snippet shows how unified memory address simplifies the program:</p> <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4

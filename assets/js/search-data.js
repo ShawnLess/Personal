@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-addressing-of-gpgpu",
+        },{id: "post-modern-c-features",
+      
+        title: "Modern C++ features",
+      
+      description: "Brief notes of modern C++ features",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/2025/06/11/Modern-C++-Features.html";
+        
+      },
+    },{id: "post-addressing-of-gpgpu",
       
         title: "Addressing of GPGPU",
       
